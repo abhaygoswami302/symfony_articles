@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts Show{% endblock %}
+
+{% block body %}
+    <div class="col-sm-8 offset-2 mt-4">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="p-2">View Post</h2>
+            </div>
+            <div class="col-sm-6 text-right ">
+                <a href="{{ path('post.index') }}">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/qhaguvvs.json"
+                        trigger="loop"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </a>
+            </div>
+        </div>
+      
+
+        <div class="card card-body mb-4">
+            Post Title : {{ post.title }} <br></p>
+            
+            Post Category : 
+                {% if(post.category) %}
+                    {{ post.category }}
+                {% else %}
+                    N/A
+                {% endif %}
+        </div>
+
+    </div>
+    <div class="col-sm-2"></div>
+{% endblock %}
